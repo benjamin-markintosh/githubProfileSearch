@@ -1,0 +1,210 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+.searchField {
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.headerIcon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+  background-color: #0563bb;
+  border-radius: 50px;
+  animation: shining 4s infinite;
+}
+
+@keyframes shining {
+  0% {
+    opacity: 0.1; /* Initial opacity */
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1; /* Increase opacity */
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.1; /* Return to initial opacity */
+    transform: scale(0.8);
+  }
+}
+
+.searchInput {
+  width: 450px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  animation: glowing 4s infinite;
+  color: #0563bb;
+}
+.searchInput:hover,
+.searchInput:focus {
+  background-color: #f9f9f9;
+}
+
+.searchInput::placeholder {
+  background-image: url("../src/assets/sp-enter.svg");
+  background-size: 24px; /* Adjust the size of the icon */
+  background-repeat: no-repeat;
+  padding-left: 40px; /* Padding to keep the text from overlapping the icon */
+  height: 20px;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #0563bb; /* Initial glow color and size */
+  }
+  50% {
+    box-shadow: 0 0 10px #0563bb; /* Increase glow size */
+  }
+  100% {
+    box-shadow: 0 0 5px #0563bb; /* Return to initial glow size */
+  }
+}
+
+.profileField {
+  margin: 100px;
+  box-shadow: 0 0 10px #0563bb;
+  min-width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+}
+.search {
+  width: 30px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+/* .fname {
+  padding-right: 50px;
+} */
+
+.biosection {
+  display: flex;
+  justify-content: space-between;
+  opacity: 80%;
+  color: #0563bb;
+}
+.bio {
+  padding-left: 25px;
+}
+@media screen and (max-device-width: 800px) {
+  .profileField {
+    min-width: 500px;
+    margin: 50px;
+  }
+  .search {
+    left: 150px;
+  }
+  .name {
+    padding-top: 50px;
+  }
+
+  .stats {
+    animation: flexslide 3s ease forwards;
+  }
+}
+
+@media screen and (max-device-width: 500px) {
+  .profileField {
+    min-width: 300px;
+    margin: 50px;
+    display: grid;
+    align-items: center;
+  }
+  .search {
+    left: 140px;
+  }
+  .name {
+    padding-top: 50px;
+  }
+  .num {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+  }
+  .desc {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-device-width: 300px) {
+  .profileField {
+    min-width: 150px;
+    margin: 1px;
+    padding: 1px;
+    display: grid;
+    align-items: center;
+  }
+  .search {
+    left: 85px;
+    width: 20px;
+  }
+  .name {
+    padding-top: 40px;
+    font-size: 11px;
+    justify-content: space-evenly;
+  }
+  .fname {
+    padding-right: 3px;
+  }
+  .profilePic {
+    width: 150px;
+    height: 150px;
+  }
+  .bio {
+    font-size: smaller;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .num {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+  }
+  .desc {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
